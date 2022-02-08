@@ -70,7 +70,7 @@ title: 3D Kinematics of eye movements
 	
 	
 	<h1>Euler Fixed Axis Theorem</h1>
-		<p><i>Euler’s rotation theorem states that in a three-dimensional space, any displacement of a rigid body such that a point on the rigid body remains fixed, is equivalent to a single rotation about some axis that runs through the fixed point.</i></p>
+		<p><i><b>Euler’s rotation theorem states that in a three-dimensional space, any displacement of a rigid body such that a point on the rigid body remains fixed, is equivalent to a single rotation about some axis that runs through the fixed point.</i></b></p>
 	
 		<p>We can describe a three dimensional rotation using a vector that points in the direction of rotation. Similar to the rotation matrices, the direction of the rotation should follow the right hand thumb. A rotation rep- resented by an Euler axis
 			and angle. rule as convention. Only three elements of rotations are necessary to quantify a three dimensional rotation unlike the nine elements for matrix rotations.</p>
@@ -78,6 +78,50 @@ title: 3D Kinematics of eye movements
 		<p>A rotation represented by an Euler axis and angle.Every final eye position then can be described by a unique rotation vector that denotes a 
 			rotation from an initial primary eye position. The rotation vectors will also have horizontal, vertical and torsional components. 
 			Two most effective mathematical treatment of rotations are the quaternions and rotation vectors.</p>
-
+	
+	<h2>Quaternions</h2>
+		<p>To visualise vectors in more than three dimensions, we make use of quaternion, q which uniquely charac- terises a rotation by an angle --- about an axis nˆ.
+			Such a number system extends the complex numbers and is given by equation 5.</p>
+	
+		<p>The quaternion has a scalar (q0) and a vector component(q). The length of the vector is determined by the
+			angle --, which allows us to rewrite a quaternion as in equation 6.</p>
+	
+		<p>Further description and interactive videos for in depth understanding of quaternions can be found on the explorable video series webpage created by Ben Eater.</p>
+	
+	<h2>Rotation Vectors</h2>
+		<p>The scalar-component of a unit quaternion (q0) does not contain any additional information, that is not already given by the vector part [2] .
+			The rotation vector then is just a simplified quaternion given by the equation </p>
+		
+	<h1>Listing’s Law</h1>
+	
+	<p>A special realisation of Donder’s law is called the Listing’s Law. Listing’s law brings about a constriction in the three dimensional motion of the eyes
+		and reduces it to almost a two dimensional problem. It states that any final orientation taken by the eye can be reached by rotation about an axis 
+		that lies with the Listing’s plane shown in figure 9. Listing’s place is a two-dimensional plane orthogonal to the gaze direction of the primary 
+		position of the eye. ( not the initial position of the eye but the primary position).</p>
+	
+	<p>The reference position for a dataset that describes the Listings plane as its displacement plane is called the primary position. 
+		This displacement plane will be exactly perpendicular to the reference gaze direction. For humans, this primary position is most commonly 
+		when the eye is looking straight ahead with the visual axis parallel to the sagittal plane of the head.</p>
+	
+	<p>Essentially, Listings law defines zero torsion about a head-fixed axes. It is however possible to reach this final orientation 
+		described by Listings using the eye-fixed axes such Helmholtz sequence and Fick’s sequence of rotations by the introduction of false torsion
+		along the line of sight.</p>
+	
+	<p>However, the most simple way to implement the Listings law would be using a co-ordinate axis with origin at the primary position (1,0,0), 
+		where the torsional component of the head is held at zero.</p>
+	
+	<p>One of the advantages of using quaternion or rotation vector formalism is the ease of implementing listings law with these tools. 
+		The complete rotation vector in accordance to the Listings law can then be written as</p>
+	
+	<p> Where, --- describes the orientation on the rotation vector on the listings plane as explained in Listing’s law and the mathematics of eye. 
+		This rotation vector describes the rotation of the point from a primary position to a final position with zero torsional component. 
+		The validity of Listings law can also be checked by checking if all these rotation vectors lie in the same displacement plane known 
+		as the Listings plane </p>
+	
+	<h1>Three Dimensional Rotations According to Lising's law</h1>
+		<p>The GitHub repository consists of a set of source code that allows users to simulate the initial and final position of the of the eye taking
+		into account Listings and Donder's law. The program also allows the users to visualise the final complete rotational vectors to check if they 
+			lie within the Listings plane.</p>
+	
 	
 </div><!-- /.blurb -->
