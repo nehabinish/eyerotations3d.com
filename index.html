@@ -46,8 +46,8 @@ title: 3D Kinematics of eye movements
 
 	<h1>Donder’s Law</h1>
 		
-		<p>The proposition that for any head position and any direction of gaze the eye always assumes the same unique position, resulting in the fixation point
-			being focused on the fovea. The orientation is always the same no matter where the eye came from.</p>
+		<p><i>The proposition that for any head position and any direction of gaze the eye always assumes the same unique position, resulting in the fixation point
+			being focused on the fovea. The orientation is always the same no matter where the eye came from.</i></p>
 		
 		<p>In order to implement Donder’s law, it is important to find a unique method to reach every final orientation or the final eye position. If the previously
 			mentioned rotation matrix method is followed, there are six pos- sible sequence of rotations arising from the three rotation axes, 
@@ -68,7 +68,16 @@ title: 3D Kinematics of eye movements
 			<p>Another commonly used system in the past is the Helmholtz system that differs from the Fick’s system as it prefers the vertical axis over the horizontal axis.
 				The sequence of rotation is pitch, yaw and roll about the new line of sight.</p>
 	
-		
 	
+	<h1>Euler Fixed Axis Theorem</h1>
+		<p><i>Euler’s rotation theorem states that in a three-dimensional space, any displacement of a rigid body such that a point on the rigid body remains fixed, is equivalent to a single rotation about some axis that runs through the fixed point.</i></p>
+	
+		<p>We can describe a three dimensional rotation using a vector that points in the direction of rotation. Similar to the rotation matrices, the direction of the rotation should follow the right hand thumb. A rotation rep- resented by an Euler axis
+			and angle. rule as convention. Only three elements of rotations are necessary to quantify a three dimensional rotation unlike the nine elements for matrix rotations.</p>
+		
+		<p>A rotation represented by an Euler axis and angle.Every final eye position then can be described by a unique rotation vector that denotes a 
+			rotation from an initial primary eye position. The rotation vectors will also have horizontal, vertical and torsional components. 
+			Two most effective mathematical treatment of rotations are the quaternions and rotation vectors.</p>
+
 	
 </div><!-- /.blurb -->
