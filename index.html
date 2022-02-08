@@ -17,5 +17,19 @@ title: 3D Kinematics of eye movements
 	leading to the sideways gaze.
 </p>
 	<p>Such an elemental rotation can be mathematically represented using three basic rotation matrices rotate vectors by an angle
-	<math>&theta<\math>, <math>&phi<\math>, and <\math>&psi<\math> about the z, y and x-axis, respectively in three dimensions, following the right-hand rule—which codifies their alternating signs.</p>
+	---- about the z, y and x-axis, respectively in three dimensions, following the right-hand rule—which codifies their alternating signs.</p>
+	<p>
+	The Rotation matrices corresponding to each of these are as follows - </p>
+	<p> Any General rotation can then be defined by the matrix multiplication of the above rotation matrices. <p>
+	<p> We can describe the rotation of the eye-fixed coordinate system from the reference position to any new posi-
+tion using the general rotation matrix represented in equation (4). This is an intrinsic rotation about z-y-x  axes. The order for matrix multiplication is from right to 
+		left and desired vector for the final eye position is dependent on the order since matrix multiplication is non-commutative. 
+		This can produced undesired effects.</p>
+	<p> The rotation matrix R still completely describes the current eye position. However, its elements are no longer determined by the relatively simple 
+		formulaes in equation 1.</p>
+	<p>To understand this better, we look at figure 4 Inverting the sequence of two rotations about space-fixed axes changes the final orientation of the 
+		object, even if it is rotated by the same degree [2]. The final orientation of the figure in [A] differs from that of [B] due to the non 
+		commutativity of the Rotation Matrix.</p>
+<p> However, it is also possible to reach the same final orientation by two different sequence of rotations, as is the case for [A] and [C].</p>
+	
 </div><!-- /.blurb -->
