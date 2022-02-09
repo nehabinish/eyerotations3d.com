@@ -23,15 +23,15 @@ title: 3D Kinematics of eye movements
 			</p>
 	
 			  <div class="row">
-			  <div class="column">
-			    <img src="fig1.gif" alt="Upwards and downward gaze" style="width:100%">
-			  </div>
-			  <div class="column">
-			    <img src="fig2.gif" alt="Sideways gaze" style="width:100%">
-			  </div>
-			  <div class="column">
-			    <img src="fig3.gif" alt="Torsional rotations" style="width:100%">
-			  </div>
+				  <div class="column">
+				    <img src="fig1.gif" alt="Upwards and downward gaze">
+				  </div>
+				  <div class="column">
+				    <img src="fig2.gif" alt="Sideways gaze">
+				  </div>
+				  <div class="column">
+				    <img src="fig3.gif" alt="Torsional rotations">
+				  </div>
 			</div>
 
 			<p>Such an elemental rotation can be mathematically represented using three basic rotation matrices rotate vectors by an angle
@@ -49,6 +49,8 @@ title: 3D Kinematics of eye movements
 
 			<p> The rotation matrix R still completely describes the current eye position. However, its elements are no longer determined by the relatively simple 
 				formulaes in equation 1.</p>
+	
+			<img src="throt.png" alt="Torsional rotations" style="width:100%">
 
 			<p>To understand this better, we look at figure 4 Inverting the sequence of two rotations about space-fixed axes changes the final orientation of the 
 				object, even if it is rotated by the same degree [2]. The final orientation of the figure in [A] differs from that of [B] due to the non 
@@ -60,6 +62,8 @@ title: 3D Kinematics of eye movements
 		
 		<p><i>The proposition that for any head position and any direction of gaze the eye always assumes the same unique position, resulting in the fixation point
 			being focused on the fovea. The orientation is always the same no matter where the eye came from.</i></p>
+	
+		<img src="donder.png" alt="Donder’s Law [4]" style="width:100%">
 		
 		<p>In order to implement Donder’s law, it is important to find a unique method to reach every final orientation or the final eye position. If the previously
 			mentioned rotation matrix method is followed, there are six pos- sible sequence of rotations arising from the three rotation axes, 
@@ -71,6 +75,13 @@ title: 3D Kinematics of eye movements
 		<p>One of the easiest and most commonly followed solution to Donder’s law is to nest co-ordinate systems and describe rotations in either a head-fixed or eye-fixed 
 			co-ordinate system. Such a co-ordinate system is known as Gimballed Co-ordinate system. There are infinite number of possible co-ordinate systems that fulfil 
 			this condition. However, for ease, we choose a vertical and a horizontal nested system.</p>
+	
+		<img src="gimbal.png" alt="Demonstration of the Gimbal Co-ordinate system [3]" style="width:100%">
+	
+		<p>Nested Gimbal systems such as the ones mentioned below, fix a nesting order for the decomposition of a three-dimensional rotation into three consecutive rotations. 
+		There is in fact a third and an even simpler way of describing a three dimensional rotation that does not depend of the order of rotations. 
+		This is rotation along an orthogonal axis of the eye.</p>
+
 		
 		<h2>Fick’s System</h2>
 			<p>A Gimbal co-ordinate Fick’s system can be be used for eye tracking experiments where the head is immo- bilised using a chin rest. The sequence of rotation is horizontal, 
@@ -87,6 +98,8 @@ title: 3D Kinematics of eye movements
 		<p>We can describe a three dimensional rotation using a vector that points in the direction of rotation. Similar to the rotation matrices, the direction of the rotation should follow the right hand thumb. A rotation rep- resented by an Euler axis
 			and angle. rule as convention. Only three elements of rotations are necessary to quantify a three dimensional rotation unlike the nine elements for matrix rotations.</p>
 		
+		<img src="euler.png" alt=" Demonstration of the Euler Fixed Axis Theorem [6]" style="width:100%">
+	
 		<p>A rotation represented by an Euler axis and angle.Every final eye position then can be described by a unique rotation vector that denotes a 
 			rotation from an initial primary eye position. The rotation vectors will also have horizontal, vertical and torsional components. 
 			Two most effective mathematical treatment of rotations are the quaternions and rotation vectors.</p>
@@ -94,6 +107,8 @@ title: 3D Kinematics of eye movements
 	<h2>Quaternions</h2>
 		<p>To visualise vectors in more than three dimensions, we make use of quaternion, q which uniquely charac- terises a rotation by an angle --- about an axis nˆ.
 			Such a number system extends the complex numbers and is given by equation 5.</p>
+	
+		<img src="quat.png" alt=" Quaternion [5]" style="width:100%">
 	
 		<p>The quaternion has a scalar (q0) and a vector component(q). The length of the vector is determined by the
 			angle --, which allows us to rewrite a quaternion as in equation 6.</p>
@@ -110,6 +125,8 @@ title: 3D Kinematics of eye movements
 		and reduces it to almost a two dimensional problem. It states that any final orientation taken by the eye can be reached by rotation about an axis 
 		that lies with the Listing’s plane shown in figure 9. Listing’s place is a two-dimensional plane orthogonal to the gaze direction of the primary 
 		position of the eye. ( not the initial position of the eye but the primary position).</p>
+	
+	<img src="listing.png" alt="Listing’s plane [4]" style="width:100%">
 	
 	<p>The reference position for a dataset that describes the Listings plane as its displacement plane is called the primary position. 
 		This displacement plane will be exactly perpendicular to the reference gaze direction. For humans, this primary position is most commonly 
