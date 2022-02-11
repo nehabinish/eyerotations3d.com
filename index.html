@@ -61,7 +61,7 @@ title: 3D Kinematics of eye movements
 							    [B] A 90 deg rotation about the horizontal axis h2, followed by a 
 							    90 deg rotation about the vertical axis h3.<br>
 							    [C] A 90 deg rotation about the eye-fixed axis e2, followed by a 
-					 90 deg rotation about the eye-fixed axis e3<b></figcaption>
+					 90 deg rotation about the eye-fixed axis e3</b></figcaption>
 			</figure>	
 
 			<p>To understand this better, we look at figure 4 Inverting the sequence of two rotations about space-fixed axes changes the final orientation of the 
@@ -89,8 +89,10 @@ title: 3D Kinematics of eye movements
 		<p>One of the easiest and most commonly followed solution to Donder’s law is to nest co-ordinate systems and describe rotations in either a head-fixed or eye-fixed 
 			co-ordinate system. Such a co-ordinate system is known as Gimballed Co-ordinate system. There are infinite number of possible co-ordinate systems that fulfil 
 			this condition. However, for ease, we choose a vertical and a horizontal nested system.</p>
-	
-		<img src="gimbal.png" alt="Demonstration of the Gimbal Co-ordinate system [3]" style="width:100%">
+		<figure>
+			<img src="gimbal.png" alt="Demonstration of the Gimbal Co-ordinate system [3]" style="width:100%">
+			<figcaption><center><b>Demonstration of the Gimbal Co-ordinate system [3]</center></b></figcaption>
+		</figure>	
 	
 		<p>Nested Gimbal systems such as the ones mentioned below, fix a nesting order for the decomposition of a three-dimensional rotation into three consecutive rotations. 
 		There is in fact a third and an even simpler way of describing a three dimensional rotation that does not depend of the order of rotations. 
@@ -112,7 +114,10 @@ title: 3D Kinematics of eye movements
 		<p>We can describe a three dimensional rotation using a vector that points in the direction of rotation. Similar to the rotation matrices, the direction of the rotation should follow the right hand thumb. A rotation rep- resented by an Euler axis
 			and angle. rule as convention. Only three elements of rotations are necessary to quantify a three dimensional rotation unlike the nine elements for matrix rotations.</p>
 		
-		<img src="euler.png" alt=" Demonstration of the Euler Fixed Axis Theorem [6]" style="width:100%">
+		<figure>
+			<img src="euler.png" alt=" Demonstration of the Euler Fixed Axis Theorem [6]" style="width:100%">
+			<figcaption><center><b>Demonstration of the Euler Fixed Axis Theorem [6]</b></center></figcaption>			
+		</figure>	
 	
 		<p>A rotation represented by an Euler axis and angle.Every final eye position then can be described by a unique rotation vector that denotes a 
 			rotation from an initial primary eye position. The rotation vectors will also have horizontal, vertical and torsional components. 
@@ -121,8 +126,10 @@ title: 3D Kinematics of eye movements
 	<h2>Quaternions</h2>
 		<p>To visualise vectors in more than three dimensions, we make use of quaternion, q which uniquely charac- terises a rotation by an angle --- about an axis nˆ.
 			Such a number system extends the complex numbers and is given by equation 5.</p>
-	
-		<img src="quat.png" alt=" Quaternion [5]" style="width:100%">
+		<figure>
+			<img src="quat.png" alt=" Quaternion [5]" style="width:100%">
+			<figcaption><center><b>Quaternion [5]</b></center></figcaption>
+		</figure>
 	
 		<p>The quaternion has a scalar (q0) and a vector component(q). The length of the vector is determined by the
 			angle --, which allows us to rewrite a quaternion as in equation 6.</p>
@@ -140,7 +147,10 @@ title: 3D Kinematics of eye movements
 		that lies with the Listing’s plane shown in figure 9. Listing’s place is a two-dimensional plane orthogonal to the gaze direction of the primary 
 		position of the eye. ( not the initial position of the eye but the primary position).</p>
 	
-	<img src="listing.png" alt="Listing’s plane [4]" style="width:100%">
+	<figure>
+		<img src="listing.png" alt="Listing’s plane [4]" style="width:100%">
+		<figcaption><center><b>Listing’s plane [4]</b></center></figcaption>
+	</figure>
 	
 	<p>The reference position for a dataset that describes the Listings plane as its displacement plane is called the primary position. 
 		This displacement plane will be exactly perpendicular to the reference gaze direction. For humans, this primary position is most commonly 
