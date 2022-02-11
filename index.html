@@ -24,43 +24,34 @@ title: 3D Kinematics of eye movements
 			<div id="content" class="center">
 
 			    <div class="flex">
-			      <figure style="float:left; width:33%" >
+			      <figure style="float:left; width:40%" >
 				<a href="#">
 				  <img src="fig1.gif" title="Upwards and downward gaze" >
 				</a>
 				      <figcaption style="text-align:center"><b>Upwards and downward gaze</b></figcaption>
 			      </figure>
 				    
-			      <figure style="float:left; width:33%" >
+			      <figure style="float:left; width:40%" >
 				<a href="#">
 				  <img src="fig2.gif" title="Sideways gaze">
 				</a>
 				      <figcaption style="text-align:center"><b>Sideways gaze</b></figcaption>
-			      </figure>
-				    
-			      <figure style ="width:33%" >  
-				<center>      
-				<a href="#">			
-				   <img src="fig3.gif" title="Torsional rotations">
-				</a>
-				      <figcaption style="text-align:center"><b>Torsional rotations</b></figcaption>	
-				</center>  	
-			      </figure>
-				    
+			      </figure>			    
 			    </div>
-
 			  </div>
 
+			 <figure style ="width:40%" >  			
+				   <img src="fig3.gif" title="Torsional rotations">
+				   <figcaption style="text-align:center"><b>Torsional rotations</b></figcaption>	 	
+			  </figure>
+				    
 			<p>Such an elemental rotation can be mathematically represented using three basic rotation matrices rotate vectors by an angle
 			\( \theta \), \( \phi \) and \( \psi \) about the z, y and x-axis, respectively in three dimensions, following the right-hand rule—which codifies their alternating signs.</p>
 
 			<p>
 			The Rotation matrices corresponding to each of these are as follows - 
-			\[ \begin{split}
-			    R_3(\theta) &= \left[ \begin{matrix} \cos (\theta) & - \sin (\theta) & 0 \\ \sin (\theta) & \cos (\theta) & 0 \\0 & 0 & 1 \end{matrix} \right] \\
-			    R_2(\phi) &= \left[ \begin{matrix} \cos (\phi) & 0 &  \sin (\phi) \\ 0 & 1 & 0 \\ - \sin (\phi) & 0 & \cos (\phi) \end{matrix} \right] \\
-			    R_1(\psi) &= \left[ \begin{matrix} 1 & 0 & 0 \\ 0 & \cos (\psi) & - \sin (\phi) \\ 0 & \sin (\psi) & \cos (\psi) \end{matrix} \right] \\ 
-		    		\end{split} \]
+			\[ R_3(\theta) = \left[ \begin{matrix} \cos (\theta) & - \sin (\theta) & 0 \\ \sin (\theta) & \cos (\theta) & 0 \\0 & 0 & 1 \end{matrix} \right] \]
+
 			</p>
 
 			<p> Any General rotation can then be defined by the matrix multiplication of the above rotation matrices. <p>
