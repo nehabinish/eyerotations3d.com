@@ -21,7 +21,7 @@ title: 3D Kinematics of eye movements
 				directed y-axis is the pitch that appears as the upward or downward gaze. Finally, the rotation around the vertically directed z-axis is the yaw 
 				leading to the sideways gaze.
 			</p>
-	
+			 
 			  <div class="row">
 				  <div class="column">
 				    <img src="fig1.gif" title="Upwards and downward gaze">
@@ -49,8 +49,20 @@ title: 3D Kinematics of eye movements
 
 			<p> The rotation matrix R still completely describes the current eye position. However, its elements are no longer determined by the relatively simple 
 				formulaes in equation 1.</p>
-	
-			<img src="throt.png" title="Torsional rotations" style="width:100%">
+			<figure>
+				<img src="throt.png" title="[A] 90 deg rotation about the vertical axis h3, 
+							    followed by a 90 deg rotation about the horizontal axis h2. 
+							    [B] A 90 deg rotation about the horizontal axis h2, followed by a 
+							    90 deg rotation about the vertical axis h3. 
+							    [C] A 90 deg rotation about the eye-fixed axis e2, followed by a 
+							    90 deg rotation about the eye-fixed axis e3" style="width:100%">
+				 <figcaption> [A] 90 deg rotation about the vertical axis h3, 
+							    followed by a 90 deg rotation about the horizontal axis h2. 
+							    [B] A 90 deg rotation about the horizontal axis h2, followed by a 
+							    90 deg rotation about the vertical axis h3. 
+							    [C] A 90 deg rotation about the eye-fixed axis e2, followed by a 
+					 90 deg rotation about the eye-fixed axis e3 </figcaption>
+			</figure>	
 
 			<p>To understand this better, we look at figure 4 Inverting the sequence of two rotations about space-fixed axes changes the final orientation of the 
 				object, even if it is rotated by the same degree [2]. The final orientation of the figure in [A] differs from that of [B] due to the non 
