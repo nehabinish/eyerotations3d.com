@@ -19,4 +19,4 @@ LIST OF FILES
 
 # Further documentations
 
-Visit the website https://nehabinish.github.io/eyerotations3d.com/# for further documentation.
+Visit the website https://nehabinish.github.io/eyerotations3d.com for further documentation.
