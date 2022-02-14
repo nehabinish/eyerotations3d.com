@@ -24,14 +24,14 @@ title: 3D Kinematics of eye movements
 			<div id="content" class="center">
 
 			    <div>
-			      <figure style="float:left; width:35%" >
+			      <figure style="float:left; width:48%" >
 				<a href="#">
 				  <img src="fig1.gif" title="Upwards and downward gaze" >
 				</a>
 				      <figcaption style="text-align:center"><b>Upwards and downward gaze</b></figcaption>
 			      </figure>
 				    
-			      <figure style="float:left; width:35%" >
+			      <figure style="float:left; width:48%" >
 				<a href="#">
 				  <img src="fig2.gif" title="Sideways gaze">
 				</a>
@@ -40,11 +40,9 @@ title: 3D Kinematics of eye movements
 			    </div>
 			  </div>
 
-			 <figure style ="width:40%" >  
-				   <center>
+			 <figure style ="width:48%" >  
 				   <img src="fig3.gif" title="Torsional rotations">
-				   <figcaption style="text-align:center"><b>Torsional rotations</b></figcaption>
-			           <\center>		   
+				   <figcaption style="text-align:center"><b>Torsional rotations</b></figcaption>		   
 			  </figure>
 				    
 			<p>Such an elemental rotation can be mathematically represented using three basic rotation matrices rotate vectors by an angle
@@ -172,16 +170,14 @@ title: 3D Kinematics of eye movements
 					   
 		 \[ q = \cos(\theta/2) + \sin(\theta/2)\left( n_x\hat{i} + n_y\hat{j} + n_z\hat{k} \right)\]			   
 	
-		<p>Further description and interactive videos for in depth understanding of quaternions can be found on <a href="{{ site.github.repository_url }}"> the explorable video series webpage</a> by Ben Eater.</p>
+		<p>Further description and interactive videos for in depth understanding of quaternions can be found on <a href="{{https://eater.net/quaternions }}"> the explorable video series webpage</a> by Ben Eater.</p>
 	
 	<h2>Rotation Vectors</h2>
 		<p>The scalar-component of a unit quaternion \( (q_0) \) does not contain any additional information, that is not already given by the vector part [2] .
 			The rotation vector then is just a simplified quaternion given by the equation </p>
 					   
-		 \[\begin{split}
-r &= \frac{\mathbf{q}}{q_0}\\
-&= \tan(\theta/2)\hat{n}
-\end{split} \]
+		 \[ r = \frac{\mathbf{q}}{q_0}\]
+	 \[ r= \tan(\theta/2)\hat{n} \]
    
 		
 	<h1>Listing’s Law</h1>
@@ -209,14 +205,16 @@ r &= \frac{\mathbf{q}}{q_0}\\
 	
 	<p>One of the advantages of using quaternion or rotation vector formalism is the ease of implementing listings law with these tools. 
 		The complete rotation vector in accordance to the Listings law can then be written as</p>
-	
-	<p> Where, --- describes the orientation on the rotation vector on the listings plane as explained in Listing’s law and the mathematics of eye. 
+	 \[ \vec{r} = \tan(\theta/2)\hat{n}\]
+	 \[ \vec{r} = \tan(\theta/2)\left(\begin{matrix} 0 \\ \cos(\alpha) \\ - \sin(\alpha) \end{matrix}\right)\]
+ 
+	<p> Where, \( \alpha \) describes the orientation on the rotation vector on the listings plane as explained in Listing’s law and the mathematics of eye. 
 		This rotation vector describes the rotation of the point from a primary position to a final position with zero torsional component. 
 		The validity of Listings law can also be checked by checking if all these rotation vectors lie in the same displacement plane known 
 		as the Listings plane </p>
 	
 	<h1>Three Dimensional Rotations According to Lising's law</h1>
-		<p>The GitHub repository consists of a set of source code that allows users to simulate the initial and final position of the of the eye taking
+		<p>The <a href="{{https://github.com/nehabinish/Three-dimensional-eye-rotations}}"> GitHub repository</a> consists of a set of source code that allows users to simulate the initial and final position of the of the eye taking
 		into account Listings and Donder's law. The program also allows the users to visualise the final complete rotational vectors to check if they 
 			lie within the Listings plane.</p>
 	
