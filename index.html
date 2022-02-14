@@ -59,7 +59,6 @@ title: 3D Kinematics of eye movements
 
 			<p> Any General rotation can then be defined by the matrix multiplication of the above rotation matrices. 
 			    \[  R = R_3(\theta) R_2(\phi)R_1(\psi) \]	
-			<equation id="eq2" style="">$$ R = R_3(\theta) R_2(\phi)R_1(\psi)$$</equation><div class="equation_number">(1)</div>
 			    \[  R = \left[ \begin{matrix}  
 				\cos(\theta)\cos(\phi) & 
 				\cos(\theta)\sin(\phi)\sin(\psi) - \sin(\theta)\cos(\psi) & 
@@ -94,7 +93,7 @@ title: 3D Kinematics of eye movements
 					 90 deg rotation about the eye-fixed axis e3</b></figcaption>
 			</figure>	
 
-			<p>To understand this better, we look at figure 4 Inverting the sequence of two rotations about space-fixed axes changes the final orientation of the 
+			<p>To understand this better, we look at figure 4. Inverting the sequence of two rotations about space-fixed axes changes the final orientation of the 
 				object, even if it is rotated by the same degree [2]. The final orientation of the figure in [A] differs from that of [B] due to the non 
 				commutativity of the Rotation Matrix.</p>
 
@@ -130,13 +129,17 @@ title: 3D Kinematics of eye movements
 
 		
 		<h2>Fick’s System</h2>
-			<p>A Gimbal co-ordinate Fick’s system can be be used for eye tracking experiments where the head is immo- bilised using a chin rest. The sequence of rotation is horizontal, 
+			<p>A Gimbal co-ordinate Fick’s system can be be used for eye tracking experiments where the head is immobilised using a chin rest. The sequence of rotation is horizontal, 
 				vertical, and torsional or in terms of our previous notations; yaw, pitch and roll.</p>
+				 
+				    \[ R_{Fick} = R_3(\theta_F)R_2(\phi_F)R_1(\psi_F) \]
 		
 		<h2>Helmholtz System</h2>
 			<p>Another commonly used system in the past is the Helmholtz system that differs from the Fick’s system as it prefers the vertical axis over the horizontal axis.
 				The sequence of rotation is pitch, yaw and roll about the new line of sight.</p>
-	
+			   \[R_{Helmholtz} = R_3(\phi_H)R_2(\theta_H)R_1(\psi_H)   \]
+				 
+				 
 	
 	<h1>Euler Fixed Axis Theorem</h1>
 		<p><i><b>Euler’s rotation theorem states that in a three-dimensional space, any displacement of a rigid body such that a point on the rigid body remains fixed, is equivalent to a single rotation about some axis that runs through the fixed point.</i></b></p>
@@ -154,21 +157,32 @@ title: 3D Kinematics of eye movements
 			Two most effective mathematical treatment of rotations are the quaternions and rotation vectors.</p>
 	
 	<h2>Quaternions</h2>
-		<p>To visualise vectors in more than three dimensions, we make use of quaternion, q which uniquely charac- terises a rotation by an angle --- about an axis nˆ.
+		<p>To visualise vectors in more than three dimensions, we make use of quaternion, <i>q</i> which uniquely characterises a rotation by an angle  \( \theta \) about an axis  \( \hat{n} \).
 			Such a number system extends the complex numbers and is given by equation 5.</p>
 		<figure>
 			<img src="quat.png" alt=" Quaternion [5]" style="width:80%">
 			<figcaption><center><b>Quaternion [5]</b></center></figcaption>
 		</figure>
+				 
+		 \[ q = q_0 + \left(q_1\hat{i} + q_2\hat{j} + q_3\hat{k} \right) \]
+		  \[q = q_0 + \mathbf{q}.\mathbf{I} \]
 	
-		<p>The quaternion has a scalar (q0) and a vector component(q). The length of the vector is determined by the
-			angle --, which allows us to rewrite a quaternion as in equation 6.</p>
+					   <p>The quaternion has a scalar  \( (q_0) \) and a vector component(<i>q</i>). The length of the vector is determined by the
+			angle  \(\theta \), which allows us to rewrite a quaternion as in equation 6.</p>
+					   
+		 \[ q = \cos(\theta/2) + \sin(\theta/2)\left( n_x\hat{i} + n_y\hat{j} + n_z\hat{k} \right)\]			   
 	
-		<p>Further description and interactive videos for in depth understanding of quaternions can be found on the explorable video series webpage created by Ben Eater.</p>
+		<p>Further description and interactive videos for in depth understanding of quaternions can be found on <a href="{{ site.github.repository_url }}"> the explorable video series webpage</a> by Ben Eater.</p>
 	
 	<h2>Rotation Vectors</h2>
-		<p>The scalar-component of a unit quaternion (q0) does not contain any additional information, that is not already given by the vector part [2] .
+		<p>The scalar-component of a unit quaternion \( (q_0) \) does not contain any additional information, that is not already given by the vector part [2] .
 			The rotation vector then is just a simplified quaternion given by the equation </p>
+					   
+		 \[\begin{split}
+r &= \frac{\mathbf{q}}{q_0}\\
+&= \tan(\theta/2)\hat{n}
+\end{split} \]
+   
 		
 	<h1>Listing’s Law</h1>
 	
