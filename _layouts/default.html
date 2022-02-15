@@ -21,10 +21,6 @@
       <header>
         <h1><a href="{{ "/" | absolute_url }}">Kinematics of the Eye</a></h1>
 
-        {% if site.logo %}
-          <img src="{{site.logo | relative_url}}" alt="Logo" />
-        {% endif %}
-
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
         {% if site.github.is_project_page %}
@@ -50,6 +46,7 @@
       </section>
       <footer>
         <p> In collaboration with <a href="https://rolfslab.org">rolfs lab</a>
+         <img src="rolfs.png" alt="Logo" />
         {% if site.github.is_project_page %}
         <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
