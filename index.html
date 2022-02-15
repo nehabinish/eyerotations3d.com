@@ -8,18 +8,16 @@ title: 3D Kinematics of eye movements
 	
 		<p>Any rigid body is able to move freely in three dimensional space using six degrees of freedom. 
 			Translational motion along the three orthogonal axis, correspond to three degrees of motion and the remaining three accounts for 
-			the rotation of the rigid body around the three axes. The eye is such a rigid body.
-			To simplify the study of eye movements, most eye tracking experiments require the head to be immobilised 
-			in a chin rest such that eye tracking is restricted to only the rotational components of the total eye movement.
-		</p>
+			the rotation of the rigid body around the three axes. The eye is such a rigid body.</p>
+		<p> We try and further our understanding of the rotational components of eye movements assuming that the translational components are absent an that the head is stationary </p>
 
 		<h2>Decomposing Three-Dimensional Rotations</h2>
 
 			<p>One of the oldest and most common ways of studying a three dimensional rotation is by decomposing it into three consecutive rotations about three orthogonal axes. </p>
 
-			<p>Rotations around the light of sight (x-axis) is called roll that accounts for the torsional rotations of the eye and the rotation around the horizontally 
-				directed y-axis is the pitch that appears as the upward or downward gaze. Finally, the rotation around the vertically directed z-axis is the yaw 
-				leading to the sideways gaze.
+			<p>Rotations around the line of sight (x-axis) is called the <i>roll</i> that accounts for the torsional rotations of the eye and the rotation around the horizontally 
+				directed y-axis is the <i>pitch</i> that appears as the upward or downward gaze. Finally, the rotation around the vertically directed z-axis is the <i>yaw</i> 
+				leading to the sideways gaze. This is visualised below.
 			</p>
 	
 			<figure>
@@ -39,8 +37,8 @@ title: 3D Kinematics of eye movements
 					<div id="content" class="center">
 
 	    
-			<p>Such an elemental rotation can be mathematically represented using three basic rotation matrices rotate vectors by an angle
-			\( \theta \), \( \phi \) and \( \psi \) about the z, y and x-axis, respectively in three dimensions, following the right-hand rule—which codifies their alternating signs.</p>
+			<p>Such an elemental rotation can be mathematically represented using three basic rotation matrices that rotate vectors by an angle
+			\( \theta \), \( \phi \) and \( \psi \) about the z, y and x-axis respectively, in three dimensions, following the right-hand rule which codifies their alternating signs <cite>[1]</cite>.</p>
 
 			<p>
 			The Rotation matrices corresponding to each of these are as follows - 
@@ -63,13 +61,13 @@ title: 3D Kinematics of eye movements
 				- sin(\phi) & \cos(\psi)\sin(\psi) & \cos(\phi)\cos(\psi) \end{matrix}\right] \] 		
 			</p>
 
-			<p> We can describe the rotation of the eye-fixed coordinate system from the reference position to any new position 
-				using the general rotation matrix represented in equation (4). This is an intrinsic rotation about z-y-x  axes. The order for matrix multiplication is from right to 
-				left and desired vector for the final eye position is dependent on the order since matrix multiplication is non-commutative. 
+			<p> It is possible to describe the rotation of the eye-fixed coordinate system from the reference position to any new position 
+				using the general rotation matrix. This is an intrinsic rotation about z-y-x  axes. The order for matrix multiplication is from right to 
+				left and desired final eye position vector is dependent on the order since matrix multiplication is non-commutative. 
 				This can produced undesired effects.</p>
 
-			<p> The rotation matrix R still completely describes the current eye position. However, its elements are no longer determined by the relatively simple 
-				formulaes in equation 1.</p>
+			<p> Then, the general rotation matrix <b>R</b> still completely describes the current eye position. However, its elements are no longer determined by the relatively simple 
+				formulaes.</p>
 			<figure>
 				<img src="throt.png" title="[A] 90 deg rotation about the vertical axis h3, 
 							    followed by a 90 deg rotation about the horizontal axis h2. 
@@ -85,7 +83,7 @@ title: 3D Kinematics of eye movements
 					 90 deg rotation about the eye-fixed axis e3</b></figcaption>
 			</figure>	
 
-			<p>To understand this better, we look at figure 4. Inverting the sequence of two rotations about space-fixed axes changes the final orientation of the 
+			<p>To understand this better, we look at above figure taken from href="https://www.sciencedirect.com/science/article/pii/004269899400257M">THOMAS HASLWANTER. (1995) <i>Mathematics of three-dimensional eye rotations</i></a></cite>. Inverting the sequence of two rotations about space-fixed axes changes the final orientation of the 
 				object, even if it is rotated by the same degree [2]. The final orientation of the figure in [A] differs from that of [B] due to the non 
 				commutativity of the Rotation Matrix.</p>
 
@@ -101,15 +99,15 @@ title: 3D Kinematics of eye movements
 		</figure>
 		
 		<p>In order to implement Donder’s law, it is important to find a unique method to reach every final orientation or the final eye position. If the previously
-			mentioned rotation matrix method is followed, there are six pos- sible sequence of rotations arising from the three rotation axes, 
+			mentioned rotation matrix method is followed, there are six possible sequence of rotations arising from the three rotation axes, 
 			some of which reach the same orientation as the other sequence.</p>
 		
 
 	<h1>The Gimbal Arrangement</h1>	
 		
-		<p>One of the easiest and most commonly followed solution to Donder’s law is to nest co-ordinate systems and describe rotations in either a head-fixed or eye-fixed 
+		<p>One of the easiest followed solution to Donder’s law is to nest co-ordinate systems and describe rotations in either a head-fixed or eye-fixed 
 			co-ordinate system. Such a co-ordinate system is known as Gimballed Co-ordinate system. There are infinite number of possible co-ordinate systems that fulfil 
-			this condition. However, for ease, we choose a vertical and a horizontal nested system.</p>
+			this condition. However, for ease, a vertical and a horizontal nested system is almost always chosen. The Gimballed systems - Fick's and Helmholtz, are represented in the below figure.</p>
 		<figure>
 			<img src="gimbal.png" alt="Demonstration of the Gimbal Co-ordinate system [3]" style="width:100%">
 			<figcaption><center><b>(6). Demonstration of the Gimbal Co-ordinate system  <cite>[3]</cite></center></b></figcaption>
@@ -125,6 +123,7 @@ title: 3D Kinematics of eye movements
 				vertical, and torsional or in terms of our previous notations; yaw, pitch and roll.</p>
 				 
 				    \[ R_{Fick} = R_3(\theta_F)R_2(\phi_F)R_1(\psi_F) \]
+					\[(Source: <cite>[1]</cite>)\]	
 		
 		<h2>Helmholtz System</h2>
 			<p>Another commonly used system in the past is the Helmholtz system that differs from the Fick’s system as it prefers the vertical axis over the horizontal axis.
@@ -219,7 +218,7 @@ title: 3D Kinematics of eye movements
 	<b>[3]</b> Christian Quaia and Lance M. Optican. Three-dimensional rotations of the eye. 2001.<br>
 	<b>[4]</b> DouglasTweedandTutisVilis.Geometricrelationsofeyepositionandvelocityvectorsduringsaccades.
 		Vision research, 30:111–27, 02 1990.<br>
-	<b>[5]</b>B. L. van der Waerden. Hamilton’s discovery of quaternions. Mathematics Magazine, 49(5):227–234,
+	<b>[5]</b> B. L. van der Waerden. Hamilton’s discovery of quaternions. Mathematics Magazine, 49(5):227–234,
 	1976.<br>
 	<b>[6]</b> Wikipedia contributors. Euler’s rotation theorem — Wikipedia, the free encyclopedia.<br> 
 	<b>[7]</b> Wikipedia contributors. Rotation matrix — Wikipedia, the free encyclopedia. 
