@@ -33,18 +33,18 @@ Here, we focus on the rotational components of eye movements, assuming that tran
 <div style = "display: flex;">
   <figure>
       <img src="figures/fig1.gif" alt="Upwards and downward gaze [4]" style="width:120%" >
-      <figcaption><center><b>(1). Upwards and downward gaze </b></center></figcaption>
+      <figcaption><center><b>(1) Upwards and downward gaze </b></center></figcaption>
   </figure>
 
   <figure>
       <img src="figures/fig2.gif" alt="Sideways Gaze [4]" style="width:120%" >
-      <figcaption><center><b>(2). Sideways Gaze </b></center></figcaption>
+      <figcaption><center><b>(2) Sideways Gaze </b></center></figcaption>
   </figure>
 </div>
 
 <figure>
     <img src="figures/fig3.gif" alt="Torsional Rotations [4]" style="width:50%; display: block; margin-left: auto; margin-right: auto;" >
-    <figcaption><center><b>(3). Torsional Rotations </b></center></figcaption>
+    <figcaption><center><b>(3) Torsional Rotations </b></center></figcaption>
 </figure>
     <div id="content" class="center">
 
@@ -101,15 +101,15 @@ $$
 				    90 deg rotation about the vertical axis h3. 
 				    [C] A 90 deg rotation about the eye-fixed axis e2, followed by a 
 				    90 deg rotation about the eye-fixed axis e3" style="width:80%; display: block; margin-left: auto; margin-right: auto;">
-	<figcaption><b>(4). <cite>[2]</cite> [A] 90 deg rotation about the vertical axis h3, 
-				    followed by a 90 deg rotation about the horizontal axis h2.<br>
-				    [B] A 90 deg rotation about the horizontal axis h2, followed by a 
-				    90 deg rotation about the vertical axis h3.<br>
-				    [C] A 90 deg rotation about the eye-fixed axis e2, followed by a 
-			 90 deg rotation about the eye-fixed axis e3</b></figcaption>
+	<figcaption>
+  <b>(4)</b> Illustration adapted from <cite>2</cite>:<br>
+  <b>[A]</b> 90° rotation about the vertical axis <i>h<sub>3</sub></i>, followed by a 90° rotation about the horizontal axis <i>h<sub>2</sub></i>.<br>
+  <b>[B]</b> 90° rotation about the horizontal axis <i>h<sub>2</sub></i>, followed by a 90° rotation about the vertical axis <i>h<sub>3</sub></i>.<br>
+  <b>[C]</b> 90° rotation about the eye-fixed axis <i>e<sub>2</sub></i>, followed by a 90° rotation about the eye-fixed axis <i>e<sub>3</sub></i>.
+</figcaption>
 </figure>	
 
-<p style="text-align: justify;">To understand this better, we look at the above figure taken from <cite><a href="https://www.sciencedirect.com/science/article/pii/004269899400257M">THOMAS HASLWANTER. (1995) <i>Mathematics of three-dimensional eye rotations</i></a></cite>. Inverting the sequence of two rotations about space-fixed axes changes the final orientation of the 
+<p style="text-align: justify;">To understand this better, we look at the above figure taken from <cite><a href="https://www.sciencedirect.com/science/article/pii/004269899400257M"> Thomas Haslwanter. (1995) <i>Mathematics of three-dimensional eye rotations</i></a></cite>. Inverting the sequence of two rotations about space-fixed axes changes the final orientation of the 
 	object, even if it is rotated by the same degree [2]. The final orientation of the figure in [A] differs from that of [B] due to the non 
 	commutativity of the Rotation Matrix.</p>
 
@@ -122,7 +122,7 @@ $$
 
 <figure>
 	<img src="figures/donder.png" alt="Donder’s Law" style="width:50%; display: block; margin-left: auto; margin-right: auto;">
-	<figcaption><center><b>(5). Donder’s Law <cite>[4]</cite></b></center></figcaption>
+	<figcaption><center><b>(5). Donder’s Law <cite>4</cite></b></center></figcaption>
 </figure>
 		
 <p style="text-align: justify;">In order to implement Donder’s law, it is important to find a unique method to reach every final orientation or the final eye position. If the previously
@@ -138,7 +138,7 @@ $$
 
 <figure>
 	<img src="figures/gimbal.png" alt="Demonstration of the Gimbal Co-ordinate system [3]" style="width:80%; display: block; margin-left: auto; margin-right: auto;">
-	<figcaption><center><b>(6). Demonstration of the Gimbal Co-ordinate system  <cite>[3]</cite></center></b></figcaption>
+	<figcaption><center><b>(6). Demonstration of the Gimbal Co-ordinate system  <cite>3</cite></center></b></figcaption>
 </figure>	
 	
 <p style="text-align: justify;">Nested Gimbal systems such as the ones mentioned below, fix a nesting order for the decomposition of a three-dimensional rotation into three consecutive rotations. 
@@ -147,13 +147,13 @@ This is rotation along an orthogonal axis of the eye.</p>
 
 <h2>Fick’s System</h2>
 <p style="text-align: justify;">A Gimbal co-ordinate Fick’s system can be be used for eye tracking experiments where the head is immobilised using a chin rest. The sequence of rotation is horizontal, 
-	vertical, and torsional or in terms of our previous notations; yaw, pitch and roll. <cite>[1]</cite></p>
+	vertical, and torsional or in terms of our previous notations; yaw, pitch and roll. <cite>1</cite></p>
 				 
 \[ R_{Fick} = R_3(\theta_F)R_2(\phi_F)R_1(\psi_F) \]
 
 <h2>Helmholtz System</h2>
 <p style="text-align: justify;">Another commonly used system in the past is the Helmholtz system that differs from the Fick’s system as it prefers the vertical axis over the horizontal axis.
-	The sequence of rotation is pitch, yaw and roll about the new line of sight. <cite>[1]</cite></p>
+	The sequence of rotation is pitch, yaw and roll about the new line of sight. <cite>1</cite></p>
 	
 \[R_{Helmholtz} = R_3(\phi_H)R_2(\theta_H)R_1(\psi_H) \]
 				 
@@ -167,7 +167,7 @@ This is rotation along an orthogonal axis of the eye.</p>
 		
 <figure>
 	<img src="figures/euler.png" alt=" Demonstration of the Euler Fixed Axis Theorem [6]" style="width:50%; display: block; margin-left: auto; margin-right: auto;">
-	<figcaption><center><b>(7). Demonstration of the Euler Fixed Axis Theorem  <cite>[6]</cite></b></center></figcaption>			
+	<figcaption><center><b>(7). Demonstration of the Euler Fixed Axis Theorem  <cite>6</cite></b></center></figcaption>			
 </figure>	
 	
 <p style="text-align: justify;">Every final eye position then can then be described by a unique rotation vector that denotes a 
@@ -182,7 +182,7 @@ The rotation vectors will also have horizontal, vertical and torsional component
 
 		<figure>
 			<img src="figures/quat.png" alt=" Quaternion [5]" style="width:50%; display: block; margin-left: auto; margin-right: auto;">
-			<figcaption><center><b>(8). Quaternion  <cite>[5]</cite></b></center></figcaption>
+			<figcaption><center><b>(8). Quaternion  <cite>5</cite></b></center></figcaption>
 		</figure>
 				 
 		 \[ q = q_0 + \left(q_1\hat{i} + q_2\hat{j} + q_3\hat{k} \right) \]
@@ -212,7 +212,7 @@ The rotation vectors will also have horizontal, vertical and torsional component
 	
 	<figure>
 		<img src="figures/listing.png" alt="Listing’s plane [4]" style="width:50%; display: block; margin-left: auto; margin-right: auto;">
-		<figcaption><center><b>(9). Listing’s plane  <cite>[4]</cite></b></center></figcaption>
+		<figcaption><center><b>(9). Listing’s plane  <cite>4</cite></b></center></figcaption>
 	</figure>
 	
 	<p style="text-align: justify;">The reference position for a dataset that describes the Listings plane as its displacement plane is called the primary position. 
