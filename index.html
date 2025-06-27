@@ -1,229 +1,215 @@
 ---
 layout: default
-title: 3D Kinematics of eye movements
+title: 3D Kinematics of Eye Movements
 ---
+
 <div class="blurb">
-	
-	<h1>Eye movements</h1>
-	
-		<p>Any rigid body is able to move freely in three dimensional space using six degrees of freedom. 
-			Translational motion along the three orthogonal axis, correspond to three degrees of motion and the remaining three accounts for 
-			the rotation of the rigid body around the three axes. The eye is such a rigid body.</p>
-		<p> We try and further our understanding of the rotational components of eye movements assuming that the translational components are absent and that the head is stationary </p>
 
-		<h2>Decomposing Three-Dimensional Rotations</h2>
+<h1>Eye Movements</h1>
 
-			<p>One of the oldest and most common ways of studying a three dimensional rotation is by decomposing it into three consecutive rotations about three orthogonal axes. </p>
+<p>
+Any rigid body can move freely in three-dimensional space using six degrees of freedom: three translational (along x, y, and z axes) and three rotational (about those axes). The eye is treated as such a rigid body.
+</p>
 
-			<p>Rotations around the line of sight (x-axis) is called the <i>roll</i> that accounts for the torsional rotations of the eye and the rotation around the horizontally 
-				directed y-axis is the <i>pitch</i> that appears as the upward or downward gaze. Finally, the rotation around the vertically directed z-axis is the <i>yaw</i> 
-				leading to the sideways gaze. This is visualised below.
-			</p>
-			<div style = "display: flex;">
-				<figure>
-						<img src="figures/fig1.gif" alt="Upwards and downward gaze [4]" style="width:120%" >
-						<figcaption><center><b>(1). Upwards and downward gaze <cite>[4]</cite></b></center></figcaption>
-				</figure>
+<p>
+Here, we focus on the rotational components of eye movements, assuming that translational motion is absent and the head remains stationary.
+</p>
 
-				<figure>
-						<img src="figures/fig2.gif" alt="Sideways Gaze [4]" style="width:120%" >
-						<figcaption><center><b>(2). Sideways Gaze <cite>[4]</cite></b></center></figcaption>
-				</figure>
-			</div>
-	
-			<figure>
-					<img src="figures/fig3.gif" alt="Torsional Rotations [4]" style="width:50%; display: block; margin-left: auto; margin-right: auto;" >
-					<figcaption><center><b>(3). Torsional Rotations <cite>[4]</cite></b></center></figcaption>
-			</figure>
-					<div id="content" class="center">
+<h2>Decomposing Three-Dimensional Rotations</h2>
 
-	    
-			<p>Such an elemental rotation can be mathematically represented using three basic rotation matrices that rotate vectors by an angle
-			\( \theta \), \( \phi \) and \( \psi \) about the z, y and x-axis respectively, in three dimensions, following the right-hand rule which codifies their alternating signs <cite>[1]</cite>.</p>
+<p>
+A traditional way to analyze 3D rotation is by decomposing it into three sequential rotations about orthogonal axes:
+</p>
 
-			<p>
-			The Rotation matrices corresponding to each of these are as follows - 
-			\[ R_3(\theta) = \left[ \begin{matrix} \cos (\theta) & - \sin (\theta) & 0 \\ \sin (\theta) & \cos (\theta) & 0 \\0 & 0 & 1 \end{matrix} \right] \]
-			\[ R_2(\phi)   = \left[ \begin{matrix} \cos (\phi) & 0 &  \sin (\phi) \\ 0 & 1 & 0 \\ - \sin (\phi) & 0 & \cos (\phi) \end{matrix} \right]\]
-			\[ R_1(\psi)   = \left[ \begin{matrix} 1 & 0 & 0 \\ 0 & \cos (\psi) & - \sin (\phi) \\ 0 & \sin (\psi) & \cos (\psi) \end{matrix} \right] \]	
-			</p>
+<ul>
+<li><b>Roll</b> (about x-axis): torsional eye movements</li>
+<li><b>Pitch</b> (about y-axis): upward or downward gaze</li>
+<li><b>Yaw</b> (about z-axis): sideways gaze</li>
+</ul>
 
-			<p> Any General rotation can then be defined by the matrix multiplication of the above rotation matrices. 
-			    \[  R = R_3(\theta) R_2(\phi)R_1(\psi) \]	
-			    \[  R = \left[ \begin{matrix}  
-				\cos(\theta)\cos(\phi) & 
-				\cos(\theta)\sin(\phi)\sin(\psi) - \sin(\theta)\cos(\psi) & 
-				\cos(\theta)\sin(\phi)\cos(\psi) + \sin(
-				\theta)\sin(\psi) \\ 
-				\sin(\theta)\cos(\phi) & 
-				\sin(\theta)\sin(\phi)\sin(\psi) + \cos(\theta)\cos(\psi) & 
-				\sin(\theta)\sin(\phi)\cos(\psi) - \cos(
-				\theta)\sin(\psi) \\ 
-				- sin(\phi) & \cos(\psi)\sin(\psi) & \cos(\phi)\cos(\psi) \end{matrix}\right] \] 		
-			</p>
+<div style="display: flex;">
+  <figure>
+    <img src="figures/fig1.gif" alt="Upward and downward gaze" style="width:120%">
+    <figcaption><center><b>(1). Upward and downward gaze <cite>[4]</cite></b></center></figcaption>
+  </figure>
 
-			<p> It is possible to describe the rotation of the eye-fixed coordinate system from the reference position to any new position 
-				using the general rotation matrix. This is an intrinsic rotation about z-y-x  axes. The order for matrix multiplication is from right to 
-				left and desired final eye position vector is dependent on the order since matrix multiplication is non-commutative. 
-				This can produced undesired effects.</p>
+  <figure>
+    <img src="figures/fig2.gif" alt="Sideways gaze" style="width:120%">
+    <figcaption><center><b>(2). Sideways gaze <cite>[4]</cite></b></center></figcaption>
+  </figure>
+</div>
 
-			<p> Then, the general rotation matrix <b>R</b> still completely describes the current eye position. However, its elements are no longer determined by the relatively simple 
-				formulaes.</p>
-			<figure>
-				<img src="figures/throt.png" title="[A] 90 deg rotation about the vertical axis h3, 
-							    followed by a 90 deg rotation about the horizontal axis h2. 
-							    [B] A 90 deg rotation about the horizontal axis h2, followed by a 
-							    90 deg rotation about the vertical axis h3. 
-							    [C] A 90 deg rotation about the eye-fixed axis e2, followed by a 
-							    90 deg rotation about the eye-fixed axis e3" style="width:80%; display: block; margin-left: auto; margin-right: auto;">
-				 <figcaption><b>(4). <cite>[2]</cite> [A] 90 deg rotation about the vertical axis h3, 
-							    followed by a 90 deg rotation about the horizontal axis h2.<br>
-							    [B] A 90 deg rotation about the horizontal axis h2, followed by a 
-							    90 deg rotation about the vertical axis h3.<br>
-							    [C] A 90 deg rotation about the eye-fixed axis e2, followed by a 
-					 90 deg rotation about the eye-fixed axis e3</b></figcaption>
-			</figure>	
+<figure>
+  <img src="figures/fig3.gif" alt="Torsional rotation" style="width:50%; display: block; margin: auto;">
+  <figcaption><center><b>(3). Torsional rotation <cite>[4]</cite></b></center></figcaption>
+</figure>
 
-			<p>To understand this better, we look at the above figure taken from <cite><a href="https://www.sciencedirect.com/science/article/pii/004269899400257M">THOMAS HASLWANTER. (1995) <i>Mathematics of three-dimensional eye rotations</i></a></cite>. Inverting the sequence of two rotations about space-fixed axes changes the final orientation of the 
-				object, even if it is rotated by the same degree [2]. The final orientation of the figure in [A] differs from that of [B] due to the non 
-				commutativity of the Rotation Matrix.</p>
+<p>
+Rotation about each axis is represented by a matrix:
+</p>
 
-			<p> However, it is also possible to reach the same final orientation by two different sequence of rotations, as is the case for [A] and [C].</p>
+$$
+R_3(\theta) = \begin{bmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{bmatrix}
+$$
 
-	<h1>Donder’s Law</h1>
-		
-		<p><i>The proposition that for any head position and any direction of gaze the eye always assumes the same unique position, resulting in the fixation point
-			being focused on the fovea. The orientation is always the same no matter where the eye came from.</i></p>
-		<figure>
-			<img src="figures/donder.png" alt="Donder’s Law" style="width:50%; display: block; margin-left: auto; margin-right: auto;">
-			<figcaption><center><b>(5). Donder’s Law <cite>[4]</cite></b></center></figcaption>
-		</figure>
-		
-		<p>In order to implement Donder’s law, it is important to find a unique method to reach every final orientation or the final eye position. If the previously
-			mentioned rotation matrix method is followed, there are six possible sequence of rotations arising from the three rotation axes, 
-			some of which reach the same orientation as the other sequence.</p>
-		
+$$
+R_2(\phi) = \begin{bmatrix} \cos\phi & 0 & \sin\phi \\ 0 & 1 & 0 \\ -\sin\phi & 0 & \cos\phi \end{bmatrix}
+$$
 
-	<h1>The Gimbal Arrangement</h1>	
-		
-		<p>One of the easiest followed solution to Donder’s law is to nest co-ordinate systems and describe rotations in either a head-fixed or eye-fixed 
-			co-ordinate system. Such a co-ordinate system is known as Gimballed Co-ordinate system. There are infinite number of possible co-ordinate systems that fulfil 
-			this condition. However, for ease, a vertical and a horizontal nested system is almost always chosen. The Gimballed systems - Fick's and Helmholtz, are represented in the below figure.</p>
-		<figure>
-			<img src="figures/gimbal.png" alt="Demonstration of the Gimbal Co-ordinate system [3]" style="width:80%; display: block; margin-left: auto; margin-right: auto;">
-			<figcaption><center><b>(6). Demonstration of the Gimbal Co-ordinate system  <cite>[3]</cite></center></b></figcaption>
-		</figure>	
-	
-		<p>Nested Gimbal systems such as the ones mentioned below, fix a nesting order for the decomposition of a three-dimensional rotation into three consecutive rotations. 
-		There is in fact a third and an even simpler way of describing a three dimensional rotation that does not depend of the order of rotations. 
-		This is rotation along an orthogonal axis of the eye.</p>
+$$
+R_1(\psi) = \begin{bmatrix} 1 & 0 & 0 \\ 0 & \cos\psi & -\sin\psi \\ 0 & \sin\psi & \cos\psi \end{bmatrix}
+$$
 
-		
-		<h2>Fick’s System</h2>
-			<p>A Gimbal co-ordinate Fick’s system can be be used for eye tracking experiments where the head is immobilised using a chin rest. The sequence of rotation is horizontal, 
-				vertical, and torsional or in terms of our previous notations; yaw, pitch and roll. <cite>[1]</cite></p>
-				 
-				    \[ R_{Fick} = R_3(\theta_F)R_2(\phi_F)R_1(\psi_F) \]
-		
-		<h2>Helmholtz System</h2>
-			<p>Another commonly used system in the past is the Helmholtz system that differs from the Fick’s system as it prefers the vertical axis over the horizontal axis.
-				The sequence of rotation is pitch, yaw and roll about the new line of sight. <cite>[1]</cite></p>
-			   \[R_{Helmholtz} = R_3(\phi_H)R_2(\theta_H)R_1(\psi_H) \]
-				 
-				 
-	
-	<h1>Euler Fixed Axis Theorem</h1>
-		<p><i><b>Euler’s rotation theorem states that in a three-dimensional space, any displacement of a rigid body such that a point on the rigid body remains fixed, is equivalent to a single rotation about some axis that runs through the fixed point.</i></b></p>
-	
-		<p>Following this, a three dimensional rotation can now just be described using a vector that points in the direction of rotation. Similar to the rotation matrices, the direction of the rotation should follow the right hand thumb rule as convention. 
-			Now, simply three elements of rotations are necessary to quantify a three dimensional rotation unlike the nine elements for matrix rotations.</p>
-		
-		<figure>
-			<img src="figures/euler.png" alt=" Demonstration of the Euler Fixed Axis Theorem [6]" style="width:50%; display: block; margin-left: auto; margin-right: auto;">
-			<figcaption><center><b>(7). Demonstration of the Euler Fixed Axis Theorem  <cite>[6]</cite></b></center></figcaption>			
-		</figure>	
-	
-		<p>Every final eye position then can then be described by a unique rotation vector that denotes a 
-			rotation from an initial primary eye position. 
-		<p>	
-		The rotation vectors will also have horizontal, vertical and torsional components and the two most 
-			effective mathematical treatment of such simplified rotations are the quaternions and rotation vectors.</p>
-	
-	<h2>Quaternions</h2>
-		<p>To visualise vectors in more than three dimensions, we make use of quaternion, <i>q</i> which uniquely characterises a rotation by an angle  \( \theta \) about an axis  \( \hat{n} \).
-			Such a number system extends the complex numbers.</p>
-		<figure>
-			<img src="figures/quat.png" alt=" Quaternion [5]" style="width:50%; display: block; margin-left: auto; margin-right: auto;">
-			<figcaption><center><b>(8). Quaternion  <cite>[5]</cite></b></center></figcaption>
-		</figure>
-				 
-		 \[ q = q_0 + \left(q_1\hat{i} + q_2\hat{j} + q_3\hat{k} \right) \]
-		  \[q = q_0 + \mathbf{q}.\mathbf{I} \]
-	
-					   <p>The quaternion has a scalar  \( (q_0) \) and a vector component(<i>q</i>). The length of the vector is determined by the
-			angle  \(\theta \), which allows us to rewrite it as - </p>
-					   
-		 \[ q = \cos(\theta/2) + \sin(\theta/2)\left( n_x\hat{i} + n_y\hat{j} + n_z\hat{k} \right)\]			   
-	
-		<p>Further description and interactive videos for in depth understanding of quaternions can be found on <a href="https://eater.net/quaternions"> the explorable video series webpage</a> by Ben Eater.</p>
-	
-	<h2>Rotation Vectors</h2>
-		<p>To make the treatment simpler, we notice that the scalar-component of a unit quaternion \( (q_0) \) does not contain any additional information, that is not already given by the vector part [2] .
-			The rotation vector then is just a simplified quaternion given by the equation </p>
-					   
-		 \[ r = \frac{\mathbf{q}}{q_0}\]
-	 \[ r= \tan(\theta/2)\hat{n} \]
-   
-		
-	<h1>Listing’s Law</h1>
-	
-	<p>A special realisation of Donder’s law is called the Listing’s Law. Listing’s law brings about a constriction in the three dimensional motion of the eyes
-		and reduces it to almost a two dimensional problem. It states that any final orientation taken by the eye can be reached by rotation about an axis 
-		that lies with the Listing’s plane. Listing’s plane is a two-dimensional plane orthogonal to the gaze direction of the primary 
-		position of the eye. ( not the initial position of the eye but the primary position).</p>
-	
-	<figure>
-		<img src="figures/listing.png" alt="Listing’s plane [4]" style="width:50%; display: block; margin-left: auto; margin-right: auto;">
-		<figcaption><center><b>(9). Listing’s plane  <cite>[4]</cite></b></center></figcaption>
-	</figure>
-	
-	<p>The reference position for a dataset that describes the Listings plane as its displacement plane is called the primary position. 
-		This displacement plane will be exactly perpendicular to the reference gaze direction. For humans, this primary position is most commonly 
-		when the eye is looking straight ahead with the visual axis parallel to the sagittal plane of the head.</p>
-	
-	<p>Essentially, Listings law defines zero torsion about a head-fixed axes. It is however possible to reach this final orientation 
-		described by Listings using the eye-fixed axes such Helmholtz sequence and Fick’s sequence of rotations by the introduction of false torsion
-		along the line of sight.</p>
-	
-	<p>However, the most simple way to implement the Listings law would be using a co-ordinate axis with origin at the primary position (1,0,0), 
-		where the torsional component of the head is held at zero.</p>
-	
-	<p>One of the advantages of using quaternion or rotation vector formalism is the ease of implementing listings law with these tools. 
-		The complete rotation vector in accordance to the Listings law can then be written as</p>
-	 \[ \vec{r} = \tan(\theta/2)\hat{n}\]
-	 \[ \vec{r} = \tan(\theta/2)\left(\begin{matrix} 0 \\ \cos(\alpha) \\ - \sin(\alpha) \end{matrix}\right)\]
- 
-	<p> Where, \( \alpha \) describes the orientation on the rotation vector on the listings plane as explained in Listing’s law and the mathematics of eye. 
-		This rotation vector describes the rotation of the point from a primary position to a final position with zero torsional component. 
-		The validity of Listings law can also be checked by checking if all these rotation vectors lie in the same displacement plane known 
-		as the Listings plane </p>
-	
-	<h1>Three Dimensional Rotations According to Lising's law</h1>
-		<p>The <a href="https://github.com/nehabinish/Three-dimensional-eye-rotations">GitHub repository</a> consists of a set of source code that allows users to simulate the initial and final position of the of the eye taking
-		into account Listings and Donder's law. The program also allows the users to visualise the final complete rotational vectors to check if they 
-			lie within the Listings plane.</p>
-						
-	<h1>Refrences</h1>
-	<p>					
-	<b>[1]</b> Edward H. Adelson and James R. Bergen. Spatiotemporal energy models for the perception of motion. J. Opt. Soc. Am. A, 2(2):284–299, Feb 1985.<br>
-	<b>[2]</b> Thomas Haslwanter. Mathematics of three-dimensional eye rotations. Vision Research, 35(12):1727–1739, 1995.<br>
-	<b>[3]</b> Christian Quaia and Lance M. Optican. Three-dimensional rotations of the eye. 2001.<br>
-	<b>[4]</b> Douglas Tweed and Tutis Vilis. Geometric relations of eye position and velocity vectors during saccades.
-		Vision research, 30:111–27, 02 1990.<br>
-	<b>[5]</b> B. L. van der Waerden. Hamilton’s discovery of quaternions. Mathematics Magazine, 49(5):227–234,
-	1976.<br>
-	<b>[6]</b> Wikipedia contributors. Euler’s rotation theorem — Wikipedia, the free encyclopedia.<br> 
-	<b>[7]</b> Wikipedia contributors. Rotation matrix — Wikipedia, the free encyclopedia. 
-	</p>						
-	
-</div><!-- /.blurb -->
+<p>
+A general rotation is then given by:
+</p>
+
+$$
+R = R_3(\theta) R_2(\phi) R_1(\psi)
+$$
+
+<figure>
+  <img src="figures/throt.png" style="width:80%; display: block; margin: auto;" title="[A] 90° about h3 → h2; [B] 90° about h2 → h3; [C] 90° about e2 → e3">
+  <figcaption><b>(4). Non-commutativity of rotation <cite>[2]</cite></b></figcaption>
+</figure>
+
+<p>
+Due to the non-commutativity of matrix multiplication, the final orientation depends on the order of rotations. For example, [A] and [B] have different outcomes, while [A] and [C] can reach the same orientation using different axes.
+</p>
+
+<h1>Donder’s Law</h1>
+
+<blockquote>
+<i>
+For any head position and gaze direction, the eye assumes a unique orientation, independent of how it arrived there.
+</i>
+</blockquote>
+
+<figure>
+  <img src="figures/donder.png" alt="Donder’s Law" style="width:50%; display: block; margin: auto;">
+  <figcaption><center><b>(5). Donder’s Law <cite>[4]</cite></b></center></figcaption>
+</figure>
+
+<p>
+Implementing Donder’s law requires a consistent way to reach every eye orientation. Rotation matrices can be used, but multiple sequences may produce the same final state.
+</p>
+
+<h1>The Gimbal Arrangement</h1>
+
+<p>
+To address Donder’s Law, nested coordinate systems are used (Gimbals), typically aligned vertically and horizontally. These allow consistent decomposition into rotation sequences.
+</p>
+
+<figure>
+  <img src="figures/gimbal.png" alt="Gimbal coordinate systems" style="width:80%; display: block; margin: auto;">
+  <figcaption><center><b>(6). Gimballed Coordinate Systems <cite>[3]</cite></b></center></figcaption>
+</figure>
+
+<h2>Fick’s System</h2>
+
+<p>
+Fick’s system uses yaw → pitch → roll:
+</p>
+
+$$
+R_{Fick} = R_3(\theta_F) R_2(\phi_F) R_1(\psi_F)
+$$
+
+<h2>Helmholtz System</h2>
+
+<p>
+Helmholtz prefers pitch → yaw → roll:
+</p>
+
+$$
+R_{Helmholtz} = R_3(\phi_H) R_2(\theta_H) R_1(\psi_H)
+$$
+
+<h1>Euler’s Fixed Axis Theorem</h1>
+
+<blockquote>
+<i>
+Any rotation of a rigid body around a fixed point is equivalent to a single rotation about some axis through that point.
+</i>
+</blockquote>
+
+<figure>
+  <img src="figures/euler.png" alt="Euler’s theorem" style="width:50%; display: block; margin: auto;">
+  <figcaption><center><b>(7). Euler’s Fixed Axis Theorem <cite>[6]</cite></b></center></figcaption>
+</figure>
+
+<p>
+This reduces 3D rotation to a single vector rotation, often represented as:
+</p>
+
+<h2>Quaternions</h2>
+
+<p>
+A quaternion <code>q</code> describes a rotation by an angle \( \theta \) about an axis \( \hat{n} \):
+</p>
+
+$$
+q = \cos(\theta/2) + \sin(\theta/2)(n_x \hat{i} + n_y \hat{j} + n_z \hat{k})
+$$
+
+<figure>
+  <img src="figures/quat.png" alt="Quaternion" style="width:50%; display: block; margin: auto;">
+  <figcaption><center><b>(8). Quaternion <cite>[5]</cite></b></center></figcaption>
+</figure>
+
+<p>
+More detail is available at <a href="https://eater.net/quaternions">Ben Eater’s quaternion visualization</a>.
+</p>
+
+<h2>Rotation Vectors</h2>
+
+<p>
+If the scalar part of the quaternion is discarded, we get the rotation vector:
+</p>
+
+$$
+\vec{r} = \tan(\theta/2) \hat{n}
+$$
+
+<h1>Listing’s Law</h1>
+
+<p>
+Listing’s Law is a refinement of Donder’s: any final eye orientation can be reached via a rotation about an axis within a specific plane — Listing’s plane, perpendicular to the primary gaze direction.
+</p>
+
+<figure>
+  <img src="figures/listing.png" alt="Listing’s plane" style="width:50%; display: block; margin: auto;">
+  <figcaption><center><b>(9). Listing’s Plane <cite>[4]</cite></b></center></figcaption>
+</figure>
+
+<p>
+The primary position is typically straight ahead gaze. Under Listing’s law, all rotation vectors lie in a 2D plane, simplifying analysis.
+</p>
+
+<p>
+A rotation vector satisfying Listing’s law is:
+</p>
+
+$$
+\vec{r} = \tan(\theta/2) \begin{bmatrix} 0 \\ \cos\alpha \\ -\sin\alpha \end{bmatrix}
+$$
+
+<h1>Simulating Eye Movements</h1>
+
+<p>
+The <a href="https://github.com/nehabinish/Three-dimensional-eye-rotations">GitHub repository</a> contains code to simulate and visualize eye movement vectors, validating both Donder’s and Listing’s laws.
+</p>
+
+<h1>References</h1>
+
+<p>
+<b>[1]</b> Adelson, E. H., & Bergen, J. R. (1985). Spatiotemporal energy models for the perception of motion. JOSA A, 2(2), 284–299.<br>
+<b>[2]</b> Haslwanter, T. (1995). Mathematics of three-dimensional eye rotations. Vision Research, 35(12), 1727–1739.<br>
+<b>[3]</b> Quaia, C., & Optican, L. M. (2001). Three-dimensional rotations of the eye.<br>
+<b>[4]</b> Tweed, D., & Vilis, T. (1990). Geometric relations of eye position and velocity vectors during saccades. Vision Research, 30, 111–127.<br>
+<b>[5]</b> van der Waerden, B. L. (1976). Hamilton’s discovery of quaternions. Mathematics Magazine, 49(5), 227–234.<br>
+<b>[6]</b> Wikipedia contributors. Euler’s rotation theorem — Wikipedia.<br>
+<b>[7]</b> Wikipedia contributors. Rotation matrix — Wikipedia.
+</p>
+
+</div>
